@@ -1,2 +1,11 @@
 server:
   port: 8082
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8083/eureka/
+
+spring:
+  application:
+    name: contact-service

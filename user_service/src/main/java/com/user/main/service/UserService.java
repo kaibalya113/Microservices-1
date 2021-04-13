@@ -22,7 +22,7 @@ public class UserService {
     );
     public User getUser(Long userId){
         User user1 =  this.userList.stream().filter(user->user.getUserId().equals(userId)).findAny().orElse(null);
-        List<Contact> contact = restTemplate.getForObject("http://localhost:8082/contact/user/"+user1.getUserId(), List.class);
+        List<Contact> contact = restTemplate.getForObject("http://CONTACT-SERVICE/contact/user/"+user1.getUserId(), List.class);
         user1.setContactList(contact);
         return user1;
     }
